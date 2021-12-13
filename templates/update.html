@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h2 class="m-5">「{{ post.title }}」を編集</h2>
+<form class="m-5" action="/update/{{ post.id }}" method="POST">
+    <div class="form-group pb-3">
+        <label for="title">タイトル : </label>
+        <input type="text" class="form-control" name="title" aria-describedby="title-help" value={{ post.title }}>
+    </div>
+    <div class="form-group pb-3">
+        <label for="detail">詳細 : </label>
+        <input type="text" class="form-control" name="detail" value={{ post.detail }}>
+    </div>
+    <div class="form-group pb-3">
+        <label for="due">予定時間 : </label>
+        <input type="date" name="due" value={{ post.due.date() }} required>
+    </div>
+    <a class="btn btn-outline-secondary" href="/" role="button">戻る</a>
+    <button type="submit" class="btn btn-outline-danger">変更内容を保存する</button>
+</form>
+{% endblock %}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    
+    <title>旅のしおりアプリ</title>
+    {% block head %}{% endblock %}
+  </head>
+
+  <body>
+    <nav class="navbar navbar-dark" style="background-color:salmon">
+      <a class="navbar-brand" href="/" style="font-size: 2rem; font-weight: 500; margin-left: 3%;">
+        旅のしおりアプリ
+      </a>
+      <a class="btn btn-sm btn-outline-light" style="margin-right: 5%;" type="button" href="/explanation">使い方</a>
+    </nav>
+    {% block body %}{% endblock %}
+  </body>
+</html>
